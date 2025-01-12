@@ -1,0 +1,11 @@
+Before diving into the code, take a minute to think about how you are going to want to organize your project.
+
+we are going to use webpack to bundle our project and we are gonna create module of every single responsibility.
+
+1. First we have to create a default list named Tasks in which writer can add Tasks.
+2. To store lists we will create an array named toDoLists.
+3. When ever user click '+ list' button there will be an input asking for list name and there will be a button which will add the list to the array toDoLists.
+4. when user selects a list the rendering area will show the tasks inside selected list and will show a button to add task.
+5. when user select add task button it will show inputs for title, description , dueDate and priority. There will be a submit button which will call the factory function to create tasks and then add it to that list.
+6. In rendering area all the tasks in the list should be displaying and a single task will show Task tittle and its due date and there will be two buttons complete and delete.
+7. when clicked on a task it should expand and show its details and also you should be able to edit its details when you click on it.

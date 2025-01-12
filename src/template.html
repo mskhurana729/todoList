@@ -4,7 +4,72 @@ s
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>To Do List</title>
   </head>
-  <body></body>
+  <body>
+    <div class="contentWrapper">
+      <header class="header">
+        <h1 class="heading">To DO</h1>
+      </header>
+
+      <div class="sidebar">
+        <div class="listsRenderingArea"></div>
+        <button class="newListButton">+ List</button>
+        <div class="newListInputContainer">
+          <label for="newListName">Name</label>
+          <input type="text" id="newListName" />
+          <button class="addList">Add List</button>
+        </div>
+      </div>
+
+      <div class="tasksBody">
+        <button class="addTaskButton">Add Task</button>
+        <div class="newTaskFormContainer">
+          <form action="" class="newTaskForm">
+            <div class="taskTittleInputContainer">
+              <label for="taskTittle">Tittle</label>
+              <input type="text" name="tittle" id="taskTittle" required />
+            </div>
+            <div class="taskDescriptionInputContainer">
+              <label for="taskDescription">Description</label>
+              <textarea
+                name="description"
+                id="taskDescription"
+                cols="30"
+              ></textarea>
+            </div>
+            <div class="taskDueDateInputContainer">
+              <label for="taskDueDate">Due Date</label>
+              <input type="text" name="dueDate" id="taskDueDate" />
+            </div>
+            <div class="taskPriorityInputContainer">
+              <label for="taskPriority">Priority </label>
+              <select name="priority" id="taskPriority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+            <button class="createTaskNotes">Create Notes</button>
+              <div class="taskNotesContainer">
+                <div class="taskNotesInputContainer">
+                  <label for="taskNotes">Notes</label>
+                  <textarea name="Notes" id="taskNotes" cols="30"></textarea>
+                </div>
+                <button class="addNote">Add Note</button>
+              </div>
+
+            </div>
+            <button class="createTaskChecklist">Create Checklist</button>
+            <div class="taskChecklistContainer">
+              <label for="taskChecklist">Checklist</label>
+
+            </div>
+          </form>
+        </div>
+        <div class="tasksRenderingArea"></div>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+  </body>
 </html>

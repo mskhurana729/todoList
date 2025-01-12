@@ -1,0 +1,162 @@
+Plan
+Now that you know what you’re aiming to solve, don’t jump into coding just yet. It’s time to plan out how you’re going to solve it first. Some of the questions you should answer at this stage of the process:
+
+Does your program have a user interface?
+
+Yes the todo list have a use interface and
+What will it look like? What functionality will the interface have? Sketch this out on paper.
+
+Done
+
+What inputs will your program have? Will the user enter data or will you get input from somewhere else?
+
+User will input the data and there will be 2 instances where user will enter data
+
+1. While creating new list
+2. while creating tasks
+
+What’s the desired output?
+
+The desired output is a to-do list of tasks and user can separate the tasks in different lists.
+
+Given your inputs, what are the steps necessary to return the desired output?
+
+The necessary steps for the desired output will be to create an array of lists and display the tasks object of the selected list in the rendering area.
+
+The last question is where you will write out an algorithm to solve the problem. You can think of an algorithm as a recipe for solving a particular problem. It defines the steps that need to be taken by the computer to solve a problem in pseudocode.
+
+The algorithm for this project will be
+
+1. First we have to create a default list named Tasks in which writer can add Tasks.
+2. To store lists we will create an array named toDoLists.
+3. When ever user click '+ list' button there will be an input asking for list name and there will be a button which will add the list to the array toDoLists.
+4. when user selects a list the rendering area will show the tasks inside selected list and will show a button to add task.
+5. when user select add task button it will show inputs for title, description , dueDate and priority. There will be a submit button which will call the factory function to create tasks and then add it to that list.
+6. In rendering area all the tasks in the list should be displaying and a single task will show Task tittle and its due date and there will be two buttons complete and delete.
+7. when clicked on a task it should expand and show its details and also you should be able to edit its details when you click on it.
+
+Pseudocode
+Pseudocode is writing out the logic for your program in natural language instead of code. It helps you slow down and think through the steps your program will have to go through to solve the problem.
+
+Here’s an example of what the pseudocode for a program that prints all numbers up to an inputted number might look like:
+
+When the user inputs a number
+Initialize a counter variable and set its value to zero
+While counter is smaller than user inputted number increment the counter by one
+Print the value of the counter variable
+This is a basic program to demonstrate how pseudocode looks. There will be more examples of pseudocode included in the assignments.
+
+1. Understand
+   Know exactly what is being asked. Most hard problems are hard because you don’t understand them (hence why this is the first step).
+
+How to know when you understand a problem? When you can explain it in plain English.
+
+2. Plan
+   Don’t dive right into solving without a plan (and somehow hope you can muddle your way through). Plan your solution!
+
+3. Divide
+   Pay attention. This is the most important step of all.
+
+Do not try to solve one big problem. You will cry.
+
+Instead, break it into sub-problems. These sub-problems are much easier to solve.
+
+Then, solve each sub-problem one by one. Begin with the simplest. Simplest means you know the answer (or are closer to that answer).
+
+After that, simplest means this sub-problem being solved doesn’t depend on others being solved.
+
+Once you solved every sub-problem, connect the dots.
+
+4. Stuck?
+   By now, you’re probably sitting there thinking “Hey Richard... That’s cool and all, but what if I’m stuck and can’t even solve a sub-problem??”
+
+First off, take a deep breath. Second, that’s fair.
+
+Don’t worry though, friend. This happens to everyone!
+
+The difference is the best programmers/problem-solvers are more curious about bugs/errors than irritated.
+
+In fact, here are three things to try when facing a whammy:
+
+Debug: Go step by step through your solution trying to find where you went wrong. Programmers call this debugging (in fact, this is all a debugger does).
+“The art of debugging is figuring out what you really told your program to do rather than what you thought you told it to do.”” — Andrew Singer
+
+Reassess: Take a step back. Look at the problem from another perspective. Is there anything that can be abstracted to a more general approach?
+“Sometimes we get so lost in the details of a problem that we overlook general principles that would solve the problem at a more general level. […]
+
+The classic example of this, of course, is the summation of a long list of consecutive integers, 1 + 2 + 3 + … + n, which a very young Gauss quickly recognized was simply n(n+1)/2, thus avoiding the effort of having to do the addition.” — C. Jordan Ball
+
+Sidenote: Another way of reassessing is starting anew. Delete everything and begin again with fresh eyes. I’m serious. You’ll be dumbfounded at how effective this is.
+
+Research: Ahh, good ol’ Google. You read that right. No matter what problem you have, someone has probably solved it. Find that person/ solution. In fact, do this even if you solved the problem! (You can learn a lot from other people’s solutions).
+Caveat: Don’t look for a solution to the big problem. Only look for solutions to sub-problems. Why? Because unless you struggle (even a little bit), you won’t learn anything. If you don’t learn anything, you wasted your time.
+
+PseudoCode
+
+Although pseudocode is a syntax-free description of an algorithm, it must provide a full description of the algorithm’s logic so that moving from pseudocode to implementation is merely a task of translating each line into code using the syntax of any given programming language.
+
+![alt text](src/pseudocode.png)
+
+Invoking classes or calling functions (using the CALL keyword).
+
+Handling exceptions (using EXCEPTION, 5WHEN keywords).
+
+How to Write Pseudocode
+Always capitalize the initial word (often one of the main six constructs).
+Make only one statement per line.
+Indent to show hierarchy, improve readability and show nested constructs.
+Always end multi-line sections using any of the END keywords (ENDIF, ENDWHILE, etc.).
+Keep your statements programming language independent.
+Use the naming domain of the problem, not that of the implementation. For instance: “Append the last name to the first name” instead of “name = first+last.”
+Keep it simple, concise and readable
+
+General Problem-Solving Techniques
+
+1. Always Have a Plan
+   This is perhaps the most important rule. You must always have a plan, rather than
+   engaging in directionless activity.
+
+2. Restate the Problem
+   Restating a problem is like circling the base of a hill that you must climb; before
+   starting your climb, why not check out the hill from every angle to see whether
+   there’s an easier way up?
+
+3. Divide the Problem
+   Finding a way to divide a problem into steps or phases can make the problem much
+   easier. If you can divide a problem into two pieces, you might think that each piece
+   would be half as difficult to solve as the original whole, but usually, it’s even easier
+   than that.
+
+4. Start with What You Know
+   In the same way, when programming, you should try to start with what you already
+   know how to do and work outward from there. Once you have divided the problem
+   up into pieces, for example, go ahead and complete any pieces you already know
+   how to code.
+
+5. Reduce the Problem
+   With this technique, when faced with a problem you are unable to solve, you
+   reduce the scope of the problem, by either adding or removing constraints, to
+   produce a problem that you do know how to solve
+
+6. Look for Analogies
+   An analogy, for our purposes, is a similarity between a current problem and a
+   problem already solved that can be exploited to help solve the current problem. The
+   similarity may take many forms. Sometimes it means the two problems are really
+   the same problem
+
+7. Experiment
+   Sometimes the best way to make progress is to try things and observe the results.
+   Note that experimentation is not the same as guessing. When you guess, you type
+   some code and hope that it works, having no strong belief that it will. An
+   experiment is a controlled process. You hypothesize what will happen when certain
+   code is executed, try it out, and see whether your hypothesis is correct. From these
+   observations, you gain information that will help you solve the original problem.
+
+8. Don’t Get Frustrated
+   Avoiding frustration is a decision you must make. However, there
+   are some thoughts you can employ that will help. First of all, never forget the first
+   rule, that you should always have a plan, and that while writing code that solves the
+   original problem is the goal of that plan, it is not the only step of that plan. Thus, if
+   you have a plan and you’re following it, then you are making progress and you
+   must believe this. If you’ve run through all the steps on your original plan and
+   you’re still not ready to start coding, then it’s time to make another plan.
