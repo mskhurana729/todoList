@@ -2,7 +2,8 @@ export class List {
   constructor() {
     let lists = ["Tasks"];
   }
-  static addList(list) {
+
+  static addListToListsArray(list) {
     this.lists.push(list);
   }
 }
