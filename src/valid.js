@@ -1,8 +1,13 @@
+import { Render } from "./render";
 export class Validate {
   static validateNewListNameInput() {
-    let listNameValidationArea = document.querySelector(
-      ".listNameValidationArea"
-    );
-    listNameValidationArea.textContent = "Please Provide The List Name";
+    let newListName = document.querySelector("#newListName").value;
+    if (!newListName) {
+      Render.displayInvalidListNameError(true);
+      return newListName;
+    }
+    Render.displayInvalidListNameError(false);
+
+    return newListName;
   }
 }

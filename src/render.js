@@ -1,8 +1,12 @@
 export class Render {
-  static displayInvalidListNameError() {
+  static displayInvalidListNameError(boolean) {
     let listNameValidationArea = document.querySelector(
       ".listNameValidationArea"
     );
-    listNameValidationArea.textContent = "Please Provide The List Name";
+    if (boolean) {
+      listNameValidationArea.textContent = "Please Provide The List Name";
+    } else {
+      listNameValidationArea.textContent = "";
+    }
   }
 }
