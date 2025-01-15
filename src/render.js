@@ -47,7 +47,6 @@ export class Render {
   }
   static displayLists() {
     const listRenderingArea = document.querySelector(".listsRenderingArea");
-    console.log(Object.keys(List.lists));
     let listNames = Object.keys(List.lists);
     listNames.forEach((list) => {
       listRenderingArea.appendChild(this.createNewListElements(list));
