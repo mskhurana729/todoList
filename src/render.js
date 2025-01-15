@@ -9,4 +9,21 @@ export class Render {
       listNameValidationArea.textContent = "";
     }
   }
+  static toggleNewListInputContainerAndButtonDisplay() {
+    const newListButton = document.querySelector(".newListButton");
+
+    const newListInputContainer = document.querySelector(
+      ".newListInputContainer"
+    );
+    if (
+      newListInputContainer.style.display === "block" &&
+      newListButton.style.display === "none"
+    ) {
+      newListInputContainer.style.display = "none";
+      newListButton.style.display = "inline";
+    } else {
+      newListInputContainer.style.display = "block";
+      newListButton.style.display = "none";
+    }
+  }
 }
