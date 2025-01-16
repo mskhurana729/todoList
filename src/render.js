@@ -1,4 +1,5 @@
 import { List } from "./lists.js";
+import { events } from "./event.js";
 export class Render {
   static displayInvalidListNameError(boolean) {
     let listNameValidationArea = document.querySelector(
@@ -47,10 +48,12 @@ export class Render {
   }
   static displayLists() {
     const listRenderingArea = document.querySelector(".listsRenderingArea");
+    listRenderingArea.textContent = "";
     let listNames = Object.keys(List.lists);
     listNames.forEach((list) => {
       listRenderingArea.appendChild(this.createNewListElements(list));
     });
+    events.removeListButtonEvent();
   }
 
   //     for (list in List.lists) {
