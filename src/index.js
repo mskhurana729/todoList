@@ -1,3 +1,5 @@
 import "./style.css";
 import "./event.js";
-console.log("Hello jjjj");
+import { Render } from "./render.js";
+
+Render.displayLists();
