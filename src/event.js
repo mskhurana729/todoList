@@ -5,13 +5,17 @@ export const events = (() => {
   const newListButton = document.querySelector(".newListButton");
 
   const addListButton = document.querySelector(".addListButton");
-  //pseudocode
-  //We want to create an event on whenever add list button is clicked
-  //it will first validate weather the input is not empty, if it is empty then it will show the error
-  //then when the user put the name correctly and clicks add list button it will erase the error
-  //and also add the list to the lists array;
-  //change the display property of newListButton and newListInputContainer
-  // and will display the list name in the listRendering area
+
+  const removeListButtonEvent = function () {
+    let removeButtons = document.querySelectorAll(".removeListButton");
+    removeButtons.forEach((removeButton) => {
+      removeButton.addEventListener("click", (e) => {
+        let listToBeRemoved = removeButton.dataset.listname;
+        List.deleteListFromListArray(listToBeRemoved);
+        Render.displayLists();
+      });
+    });
+  };
 
   const addListButtonEvent = (function () {
     addListButton.addEventListener("click", (e) => {
@@ -33,4 +37,5 @@ export const events = (() => {
       Render.toggleNewListInputContainerAndButtonDisplay();
     });
   })();
+  return { removeListButtonEvent };
 })();
