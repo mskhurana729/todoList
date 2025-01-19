@@ -67,11 +67,4 @@ export class Render {
     events.removeListButtonEvent();
     events.selectListEvent();
   }
-
-  //     for (list in List.lists) {
-  //       const listContainer = document.createElement("div");
-  //       const listName = document.createElement("span");
-  //       listName.textContent = list;
-  //       console.log(listName);
-  //     }
 }
