@@ -6,7 +6,14 @@ export const events = (() => {
 
   const addListButton = document.querySelector(".addListButton");
 
-  const addTaskButton = document.querySelector(".newTaskButton");
+  const newTaskButton = document.querySelector(".newTaskButton");
+
+  const newTaskButtonEvent = (function () {
+    newTaskButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      Render.toggleNewTaskFormContainerAndButtonDisplay();
+    });
+  })();
 
   const removeListButtonEvent = function () {
     let removeButtons = document.querySelectorAll(".removeListButton");

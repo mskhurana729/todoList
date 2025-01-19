@@ -28,6 +28,9 @@
   grid-area: 2/2/3/-1;
   padding: 10px;
 }
+.newTaskFormContainer {
+  display: none;
+}
 .footer {
   border: 2px solid red;
   grid-area: 3/1/-1/-1;

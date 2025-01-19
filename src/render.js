@@ -1,6 +1,22 @@
 import { List } from "./lists.js";
 import { events } from "./event.js";
 export class Render {
+  static toggleNewTaskFormContainerAndButtonDisplay() {
+    const newTaskButton = document.querySelector(".newTaskButton");
+    const newTaskFormContainer = document.querySelector(
+      ".newTaskFormContainer"
+    );
+    if (
+      newTaskFormContainer.style.display === "block" &&
+      newTaskButton.style.display === "none"
+    ) {
+      newTaskFormContainer.style.display = "none";
+      newTaskButton.style.display = "inline";
+    } else {
+      newTaskFormContainer.style.display = "block";
+      newTaskButton.style.display = "none";
+    }
+  }
   static displayInvalidListNameError(boolean) {
     let listNameValidationArea = document.querySelector(
       ".listNameValidationArea"
