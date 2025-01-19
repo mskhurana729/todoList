@@ -13,6 +13,9 @@ export const events = (() => {
     removeButtons.forEach((removeButton) => {
       removeButton.addEventListener("click", (e) => {
         let listToBeRemoved = removeButton.dataset.listname;
+        if (listToBeRemoved === List.selectedList) {
+          List.selectList(); // this will make the tasks list selected again only if the current selected list is being deleted
+        }
         List.deleteListFromListArray(listToBeRemoved);
         Render.displayLists();
       });
