@@ -46,15 +46,15 @@ export class Render {
     const listName = document.createElement("button");
     listName.classList.add("listNameButton");
     listName.textContent = list;
-
-    const removeListButton = document.createElement("button");
-    removeListButton.classList.add("removeListButton");
-    removeListButton.setAttribute("data-listName", list); //we will use this when we want to remove the list
-    removeListButton.textContent = "X";
-    console.log(removeListButton);
-    console.log(listName);
     listContainer.appendChild(listName);
-    listContainer.appendChild(removeListButton);
+    if (list !== "tasks") {
+      const removeListButton = document.createElement("button");
+      removeListButton.classList.add("removeListButton");
+      removeListButton.setAttribute("data-listName", list); //we will use this when we want to remove the list
+      removeListButton.textContent = "X";
+      listContainer.appendChild(removeListButton);
+    }
+
     return listContainer;
   }
   static displayLists() {
