@@ -11,6 +11,16 @@ export class Render {
       listNameValidationArea.textContent = "";
     }
   }
+
+  static changeColorOfListsToBlack() {
+    let listNameButtons = document.querySelectorAll(".listNameButton");
+    listNameButtons.forEach((listNameButton) => {
+      listNameButton.style.color = "Black";
+    });
+  }
+  static changeColorOfSelectedList(list) {
+    list.style.color = "Blue";
+  }
   static toggleNewListInputContainerAndButtonDisplay() {
     const newListButton = document.querySelector(".newListButton");
 
@@ -33,8 +43,8 @@ export class Render {
     const listContainer = document.createElement("div");
     listContainer.classList.add("listContainer");
 
-    const listName = document.createElement("span");
-    listName.classList.add("listName");
+    const listName = document.createElement("button");
+    listName.classList.add("listNameButton");
     listName.textContent = list;
 
     const removeListButton = document.createElement("button");
@@ -42,6 +52,7 @@ export class Render {
     removeListButton.setAttribute("data-listName", list); //we will use this when we want to remove the list
     removeListButton.textContent = "X";
     console.log(removeListButton);
+    console.log(listName);
     listContainer.appendChild(listName);
     listContainer.appendChild(removeListButton);
     return listContainer;
@@ -54,6 +65,7 @@ export class Render {
       listRenderingArea.appendChild(this.createNewListElements(list));
     });
     events.removeListButtonEvent();
+    events.selectListEvent();
   }
 
   //     for (list in List.lists) {

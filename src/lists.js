@@ -1,5 +1,6 @@
 export class List {
   static lists = { tasks: [] };
+  static selectedList = "tasks";
 
   static addListToListsArray(list) {
     this.lists[list] = [];
@@ -7,5 +8,8 @@ export class List {
   }
   static deleteListFromListArray(list) {
     delete this.lists[list];
+  }
+  static selectList(list = "tasks") {
+    this.selectedList = list;
   }
 }

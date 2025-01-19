@@ -6,6 +6,8 @@ export const events = (() => {
 
   const addListButton = document.querySelector(".addListButton");
 
+  const addTaskButton = document.querySelector(".newTaskButton");
+
   const removeListButtonEvent = function () {
     let removeButtons = document.querySelectorAll(".removeListButton");
     removeButtons.forEach((removeButton) => {
@@ -37,5 +39,25 @@ export const events = (() => {
       Render.toggleNewListInputContainerAndButtonDisplay();
     });
   })();
-  return { removeListButtonEvent };
+  //what we need is that we want to keep the color changed of the selected list
+
+  const selectListEvent = function () {
+    let previousSelectedList = List.selectedList;
+    let listNameButtons = document.querySelectorAll(".listNameButton");
+
+    listNameButtons.forEach((listNameButton) => {
+      if (listNameButton.textContent == previousSelectedList) {
+        Render.changeColorOfSelectedList(listNameButton);
+      }
+      listNameButton.addEventListener("click", (e) => {
+        Render.changeColorOfListsToBlack();
+        let selectedListByClick = e.target;
+        List.selectList(selectedListByClick.textContent);
+        console.log(List.selectedList);
+        Render.changeColorOfSelectedList(selectedListByClick);
+      });
+    });
+  };
+
+  return { removeListButtonEvent, selectListEvent };
 })();
