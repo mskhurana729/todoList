@@ -4,14 +4,41 @@ import { Render } from "./render.js";
 export const events = (() => {
   const newListButton = document.querySelector(".newListButton");
 
+  const newListInputContainer = document.querySelector(
+    ".newListInputContainer"
+  );
+
   const addListButton = document.querySelector(".addListButton");
 
   const newTaskButton = document.querySelector(".newTaskButton");
 
+  const newTaskFormContainer = document.querySelector(".newTaskFormContainer");
+
+  const newTaskNotesButton = document.querySelector(".newTaskNotes");
+
+  const taskNotesInputContainer = document.querySelector(
+    ".taskNotesInputContainer"
+  );
+  const addNoteButton = document.querySelector(".addNote");
+
+  const addTaskButton = document.querySelector(".addTaskButton");
+  const newTaskNotesButtonEvent = (function () {
+    newTaskNotesButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      Render.toggleDisplay(newTaskNotesButton, taskNotesInputContainer);
+    });
+  })();
+
+  const addNoteButtonEvent = (function () {
+    addNoteButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      Render.toggleDisplay(newTaskNotesButton, taskNotesInputContainer);
+    });
+  })();
   const newTaskButtonEvent = (function () {
     newTaskButton.addEventListener("click", (e) => {
       e.preventDefault();
-      Render.toggleNewTaskFormContainerAndButtonDisplay();
+      Render.toggleDisplay(newTaskFormContainer, newTaskButton);
     });
   })();
 
@@ -39,14 +66,14 @@ export const events = (() => {
       }
 
       List.addListToListsArray(newListName);
-      Render.toggleNewListInputContainerAndButtonDisplay();
+      Render.toggleDisplay(newListButton, newListInputContainer);
       Render.displayLists();
     });
   })();
 
   const newListButtonEvent = (function () {
     newListButton.addEventListener("click", (e) => {
-      Render.toggleNewListInputContainerAndButtonDisplay();
+      Render.toggleDisplay(newListInputContainer, newListButton);
     });
   })();
   //what we need is that we want to keep the color changed of the selected list

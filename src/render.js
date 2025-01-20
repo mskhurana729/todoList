@@ -1,22 +1,16 @@
 import { List } from "./lists.js";
 import { events } from "./event.js";
 export class Render {
-  static toggleNewTaskFormContainerAndButtonDisplay() {
-    const newTaskButton = document.querySelector(".newTaskButton");
-    const newTaskFormContainer = document.querySelector(
-      ".newTaskFormContainer"
-    );
-    if (
-      newTaskFormContainer.style.display === "block" &&
-      newTaskButton.style.display === "none"
-    ) {
-      newTaskFormContainer.style.display = "none";
-      newTaskButton.style.display = "inline";
+  static toggleDisplay(elem1, elem2) {
+    if (elem1.style.display === "block" && elem2.style.display === "none") {
+      elem1.style.display = "none";
+      elem2.style.display = "inline";
     } else {
-      newTaskFormContainer.style.display = "block";
-      newTaskButton.style.display = "none";
+      elem1.style.display = "block";
+      elem2.style.display = "none";
     }
   }
+
   static displayInvalidListNameError(boolean) {
     let listNameValidationArea = document.querySelector(
       ".listNameValidationArea"
@@ -36,23 +30,6 @@ export class Render {
   }
   static changeColorOfSelectedList(list) {
     list.style.color = "Blue";
-  }
-  static toggleNewListInputContainerAndButtonDisplay() {
-    const newListButton = document.querySelector(".newListButton");
-
-    const newListInputContainer = document.querySelector(
-      ".newListInputContainer"
-    );
-    if (
-      newListInputContainer.style.display === "block" &&
-      newListButton.style.display === "none"
-    ) {
-      newListInputContainer.style.display = "none";
-      newListButton.style.display = "inline";
-    } else {
-      newListInputContainer.style.display = "block";
-      newListButton.style.display = "none";
-    }
   }
 
   static createNewListElements(list) {

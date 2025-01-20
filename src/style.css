@@ -31,6 +31,12 @@
 .newTaskFormContainer {
   display: none;
 }
+.newTaskNotes {
+  display: block;
+}
+.taskNotesInputContainer {
+  display: none;
+}
 .footer {
   border: 2px solid red;
   grid-area: 3/1/-1/-1;
