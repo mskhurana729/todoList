@@ -12,4 +12,7 @@ export class List {
   static selectList(list = "tasks") {
     this.selectedList = list;
   }
+  static addTaskToList(task) {
+    this.lists[this.selectedList].push(task);
+  }
 }
