@@ -1,7 +1,9 @@
 import { Validate } from "./valid.js";
 import { List } from "./lists.js";
 import { Render } from "./render.js";
+import { Task } from "./tasks.js";
 export const events = (() => {
+  //Buttons and form elements
   const newListButton = document.querySelector(".newListButton");
 
   const newListInputContainer = document.querySelector(
@@ -22,6 +24,27 @@ export const events = (() => {
   const addNoteButton = document.querySelector(".addNote");
 
   const addTaskButton = document.querySelector(".addTaskButton");
+
+  //events for all the buttons
+
+  //whenever the add task button is clicked, it should check that tittle description ,dueDate, priority are not empty
+  //then it should create a task with all the inputs data
+  //then it should add that task to the selected list
+  //then it should show the tasks in the taskRendering area
+
+  const addTaskButtonEvent = (function () {
+    addTaskButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      let areInputsValid = Validate.validateTaskInputs();
+      if (areInputsValid) {
+        let newTask = Task.createTask();
+        List.addTaskToList(newTask);
+        Render.displaySelectedListTasks();
+        Render.toggleDisplay(newTaskFormContainer, newTaskButton);
+      }
+    });
+  })();
+
   const newTaskNotesButtonEvent = (function () {
     newTaskNotesButton.addEventListener("click", (e) => {
       e.preventDefault();

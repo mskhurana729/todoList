@@ -27,11 +27,11 @@
         <div class="newTaskFormContainer">
           <form action="" class="newTaskForm">
             <div class="taskTittleInputContainer">
-              <label for="taskTittle">Tittle</label>
-              <input type="text" name="tittle" id="taskTittle" required />
+              <label for="taskTittle">Tittle*</label>
+              <input autofocus maxlength="50" type="text" name="tittle" id="taskTittle" required />
             </div>
             <div class="taskDescriptionInputContainer">
-              <label for="taskDescription">Description</label>
+              <label for="taskDescription">Description*</label>
               <textarea
                 name="description"
                 id="taskDescription"
@@ -39,14 +39,14 @@
               ></textarea>
             </div>
             <div class="taskDueDateInputContainer">
-              <label for="taskDueDate">Due Date</label>
+              <label for="taskDueDate">Due Date*</label>
               <input type="date" name="dueDate" id="taskDueDate" />
             </div>
             <div class="taskPriorityInputContainer">
               <label for="taskPriority">Priority </label>
               <select name="priority" id="taskPriority">
                 <option value="high">High</option>
-                <option value="medium">Medium</option>
+                <option selected value="medium">Medium</option>
                 <option value="low">Low</option>
               </select>
             </div>
@@ -62,8 +62,8 @@
             </div>
 
           </form>
+          <div class="tasksRenderingArea"></div>
         </div>
-        <div class="tasksRenderingArea"></div>
       </div>
       <footer class="footer">Copyright @ 2025</footer>
     </div>

@@ -94,16 +94,17 @@ export class Render {
     taskTittle.classList.add("taskTittle");
     taskTittle.textContent = task.tittle;
     taskDiv.appendChild(taskTittle);
-    const taskRemoveButton = document.createElement("button");
-    taskRemoveButton.classList.add("taskRemoveButton");
-    taskRemoveButton.setAttribute("data-taskIndex", counter);
-    taskRemoveButton.textContent = "X";
-    taskDiv.appendChild(taskRemoveButton);
 
     const taskDueDate = document.createElement("span");
     taskDueDate.classList.add(".taskDueDate");
     taskDueDate.textContent = task.dueDate;
     taskDiv.appendChild(taskDueDate);
+
+    const taskRemoveButton = document.createElement("button");
+    taskRemoveButton.classList.add("taskRemoveButton");
+    taskRemoveButton.setAttribute("data-taskIndex", counter);
+    taskRemoveButton.textContent = "X";
+    taskDiv.appendChild(taskRemoveButton);
 
     const taskNotes = document.createElement("p");
     taskNotes.classList.add("taskNotes");
