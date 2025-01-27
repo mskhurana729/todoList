@@ -87,6 +87,7 @@ export class Render {
     taskDiv.classList.add("taskContainer");
     const taskCheckbox = document.createElement("input");
     taskCheckbox.classList.add("taskCheckbox");
+    taskCheckbox.setAttribute("type", "checkbox");
     taskCheckbox.setAttribute("data-taskIndex", counter);
 
     taskDiv.appendChild(taskCheckbox);
