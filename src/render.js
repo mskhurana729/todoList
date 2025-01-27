@@ -119,8 +119,7 @@ export class Render {
     let selectedList = List.selectedList;
     const taskRenderingArea = document.querySelector(".tasksRenderingArea");
     taskRenderingArea.textContent = "";
-    // taskRenderingArea.textContent = List.lists[selectedList][0];
-    // console.log(List.lists[selectedList]);
+
     let counter = 0;
     List.lists[selectedList].forEach((task) => {
       let taskToBeDisplayed = this.createTaskElements(task, counter);

@@ -27,10 +27,8 @@ export const events = (() => {
 
   //events for all the buttons
 
-  //whenever the add task button is clicked, it should check that tittle description ,dueDate, priority are not empty
-  //then it should create a task with all the inputs data
-  //then it should add that task to the selected list
-  //then it should show the tasks in the taskRendering area
+  //now we want an event which will show the selected list tasks
+  //
 
   const addTaskButtonEvent = (function () {
     addTaskButton.addEventListener("click", (e) => {
@@ -115,6 +113,7 @@ export const events = (() => {
         List.selectList(selectedListByClick.textContent);
         console.log(List.selectedList);
         Render.changeColorOfSelectedList(selectedListByClick);
+        Render.displaySelectedListTasks();
       });
     });
   };
