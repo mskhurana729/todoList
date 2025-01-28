@@ -27,9 +27,7 @@ export const events = (() => {
 
   //events for all the buttons
 
-  //now we want a event which will show task description and notes when the task is clicked
-  //for this to happen we have to update render create task elements and create elements for the description and notes
-  //then whenever the task is clicked we will have to show that task notes and description which should be editable
+  //now we want to reset task form whenever add task button event goes successfully
 
   const taskContainerEvent = function () {
     const taskContainers = document.querySelectorAll(".taskContainer");
@@ -50,6 +48,7 @@ export const events = (() => {
         Render.displaySelectedListTasks();
         Render.toggleDisplay(newTaskFormContainer, newTaskButton);
         taskContainerEvent();
+        Render.resetTaskForm();
       }
     });
   })();

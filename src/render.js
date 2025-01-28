@@ -40,6 +40,14 @@ export class Render {
     }
   }
 
+  static resetTaskForm() {
+    document.querySelector("#taskTittle").value = "";
+    document.querySelector("#taskDescription").value = "";
+    document.querySelector("#taskDueDate").value = "";
+    document.querySelector("#taskPriority").value = "";
+    document.querySelector("#taskNotes").value = "";
+  }
+
   static changeColorOfListsToBlack() {
     let listNameButtons = document.querySelectorAll(".listNameButton");
     listNameButtons.forEach((listNameButton) => {
