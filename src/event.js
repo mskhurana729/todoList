@@ -27,8 +27,18 @@ export const events = (() => {
 
   //events for all the buttons
 
-  //now we want an event which will show the selected list tasks
-  //
+  //now we want a event which will show task description and notes when the task is clicked
+  //for this to happen we have to update render create task elements and create elements for the description and notes
+  //then whenever the task is clicked we will have to show that task notes and description which should be editable
+
+  const taskContainerEvent = function () {
+    const taskContainers = document.querySelectorAll(".taskContainer");
+    taskContainers.forEach((taskContainer) => {
+      taskContainer.addEventListener("click", (e) => {
+        Render.displayTaskNotesAndDescription(taskContainer);
+      });
+    });
+  };
 
   const addTaskButtonEvent = (function () {
     addTaskButton.addEventListener("click", (e) => {
@@ -39,6 +49,7 @@ export const events = (() => {
         List.addTaskToList(newTask);
         Render.displaySelectedListTasks();
         Render.toggleDisplay(newTaskFormContainer, newTaskButton);
+        taskContainerEvent();
       }
     });
   })();

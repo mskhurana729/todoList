@@ -1,10 +1,28 @@
 import { List } from "./lists.js";
 import { events } from "./event.js";
 export class Render {
+  static displayTaskNotesAndDescription(taskContainer) {
+    let taskNotes = taskContainer.querySelector(".taskNotes");
+    let taskDescription = taskContainer.querySelector(".taskDescription");
+    taskNotes.style.display = "block";
+    taskDescription.style.display = "block";
+  }
   static toggleDisplay(elem1, elem2) {
     if (elem1.style.display === "block" && elem2.style.display === "none") {
       elem1.style.display = "none";
       elem2.style.display = "inline";
+    } else if (
+      elem1.style.display === "block" &&
+      elem2.style.display === "block"
+    ) {
+      elem1.style.display = "none";
+      elem2.style.display = "none";
+    } else if (
+      elem1.style.display === "none" &&
+      elem2.style.display === "none"
+    ) {
+      elem1.style.display = "block";
+      elem2.style.display = "block";
     } else {
       elem1.style.display = "block";
       elem2.style.display = "none";
@@ -110,7 +128,17 @@ export class Render {
     const taskNotes = document.createElement("p");
     taskNotes.classList.add("taskNotes");
     taskNotes.textContent = task.notes;
+    taskNotes.style.display = "none";
+    taskNotes.setAttribute("contentEditable", "true");
     taskDiv.appendChild(taskNotes);
+
+    const taskDescription = document.createElement("p");
+    taskDescription.classList.add("taskDescription");
+    taskDescription.textContent = task.description;
+    taskDescription.setAttribute("contentEditable", "true");
+
+    taskDescription.style.display = "none";
+    taskDiv.appendChild(taskDescription);
 
     return taskDiv;
   }

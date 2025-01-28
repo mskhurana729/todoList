@@ -6,7 +6,7 @@ export class Task {
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.taskNotes = taskNotes;
+    this.notes = taskNotes;
   }
 
   static createTask() {
