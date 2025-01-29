@@ -6,4 +6,9 @@ export class LocalStorage {
   static saveListToLocalStorage(list) {
     localStorage.setItem("List", JSON.stringify(list));
   }
+  static getListFromLocalStorage() {
+    let List = JSON.parse(localStorage.getItem("List"));
+    console.log(List);
+    return List;
+  }
 }
