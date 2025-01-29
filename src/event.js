@@ -27,8 +27,6 @@ export const events = (() => {
 
   //events for all the buttons
 
-  //now we want to reset task form whenever add task button event goes successfully
-
   const taskContainerEvent = function () {
     const taskContainers = document.querySelectorAll(".taskContainer");
     taskContainers.forEach((taskContainer) => {
