@@ -28,6 +28,14 @@ export const events = (() => {
 
   //events for all the buttons
 
+  const onPageLoadEvent = (function () {
+    window.addEventListener("load", (e) => {
+      List.lists = LocalStorage.getListFromLocalStorage();
+      Render.displayLists();
+      Render.displaySelectedListTasks();
+    });
+  })();
+
   const taskContainerEvent = function () {
     const taskContainers = document.querySelectorAll(".taskContainer");
     taskContainers.forEach((taskContainer) => {
@@ -72,7 +80,6 @@ export const events = (() => {
       Render.toggleDisplay(newTaskFormContainer, newTaskButton);
     });
   })();
-
   const removeListButtonEvent = function () {
     let removeButtons = document.querySelectorAll(".removeListButton");
     removeButtons.forEach((removeButton) => {
@@ -83,6 +90,7 @@ export const events = (() => {
         }
         List.deleteListFromListArray(listToBeRemoved);
         Render.displayLists();
+        LocalStorage.saveListToLocalStorage();
       });
     });
   };
