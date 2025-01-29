@@ -2,6 +2,7 @@ import { Validate } from "./valid.js";
 import { List } from "./lists.js";
 import { Render } from "./render.js";
 import { Task } from "./tasks.js";
+import { LocalStorage } from "./localstorage.js";
 export const events = (() => {
   //Buttons and form elements
   const newListButton = document.querySelector(".newListButton");
@@ -47,6 +48,7 @@ export const events = (() => {
         Render.toggleDisplay(newTaskFormContainer, newTaskButton);
         taskContainerEvent();
         Render.resetTaskForm();
+        LocalStorage.saveListToLocalStorage(List.lists);
       }
     });
   })();
@@ -97,6 +99,7 @@ export const events = (() => {
       List.addListToListsArray(newListName);
       Render.toggleDisplay(newListButton, newListInputContainer);
       Render.displayLists();
+      LocalStorage.saveListToLocalStorage(List.lists);
     });
   })();
 
