@@ -27,8 +27,6 @@ export const events = (() => {
 
   //events for all the buttons
 
-  //now we want to reset task form whenever add task button event goes successfully
-
   const taskContainerEvent = function () {
     const taskContainers = document.querySelectorAll(".taskContainer");
     taskContainers.forEach((taskContainer) => {
@@ -107,7 +105,6 @@ export const events = (() => {
       Render.toggleDisplay(newListInputContainer, newListButton);
     });
   })();
-  //what we need is that we want to keep the color changed of the selected list
 
   const selectListEvent = function () {
     let previousSelectedList = List.selectedList;
