@@ -29,7 +29,7 @@ export const events = (() => {
   //events for all the buttons
 
   const onPageLoadEvent = (function () {
-    window.addEventListener("load", (e) => {
+    window.addEventListener("load", () => {
       if (LocalStorage.getListFromLocalStorage()) {
         List.lists = LocalStorage.getListFromLocalStorage();
         Render.displayLists();
@@ -41,7 +41,7 @@ export const events = (() => {
   const taskContainerEvent = function () {
     const taskContainers = document.querySelectorAll(".taskContainer");
     taskContainers.forEach((taskContainer) => {
-      taskContainer.addEventListener("click", (e) => {
+      taskContainer.addEventListener("click", () => {
         Render.displayTaskNotesAndDescription(taskContainer);
       });
     });
@@ -50,7 +50,7 @@ export const events = (() => {
   const removeTaskButtonEvent = function () {
     let taskRemoveButtons = document.querySelectorAll(".taskRemoveButton");
     taskRemoveButtons.forEach((taskRemoveButton) => {
-      taskRemoveButton.addEventListener("click", (e) => {
+      taskRemoveButton.addEventListener("click", () => {
         let taskIndex = taskRemoveButton.dataset.taskindex;
         console.log(taskIndex);
         List.removeTask(taskIndex);
@@ -97,7 +97,7 @@ export const events = (() => {
   const removeListButtonEvent = function () {
     let removeButtons = document.querySelectorAll(".removeListButton");
     removeButtons.forEach((removeButton) => {
-      removeButton.addEventListener("click", (e) => {
+      removeButton.addEventListener("click", () => {
         let listToBeRemoved = removeButton.dataset.listname;
         if (listToBeRemoved === List.selectedList) {
           List.selectList(); // this will make the tasks list selected again only if the current selected list is being deleted
@@ -126,7 +126,7 @@ export const events = (() => {
   })();
 
   const newListButtonEvent = (function () {
-    newListButton.addEventListener("click", (e) => {
+    newListButton.addEventListener("click", () => {
       Render.toggleDisplay(newListInputContainer, newListButton);
     });
   })();
