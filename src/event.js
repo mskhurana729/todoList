@@ -30,9 +30,11 @@ export const events = (() => {
 
   const onPageLoadEvent = (function () {
     window.addEventListener("load", (e) => {
-      List.lists = LocalStorage.getListFromLocalStorage();
-      Render.displayLists();
-      Render.displaySelectedListTasks();
+      if (LocalStorage.getListFromLocalStorage()) {
+        List.lists = LocalStorage.getListFromLocalStorage();
+        Render.displayLists();
+        Render.displaySelectedListTasks();
+      }
     });
   })();
 
