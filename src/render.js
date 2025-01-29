@@ -44,7 +44,7 @@ export class Render {
     document.querySelector("#taskTittle").value = "";
     document.querySelector("#taskDescription").value = "";
     document.querySelector("#taskDueDate").value = "";
-    document.querySelector("#taskPriority").value = "";
+    document.querySelector("#taskPriority").value = "medium";
     document.querySelector("#taskNotes").value = "";
   }
 
