@@ -15,4 +15,7 @@ export class List {
   static addTaskToList(task) {
     this.lists[this.selectedList].push(task);
   }
+  static removeTask(index) {
+    this.lists[this.selectedList].splice(index, 1);
+  }
 }

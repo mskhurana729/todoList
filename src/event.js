@@ -90,7 +90,7 @@ export const events = (() => {
         }
         List.deleteListFromListArray(listToBeRemoved);
         Render.displayLists();
-        LocalStorage.saveListToLocalStorage();
+        LocalStorage.saveListToLocalStorage(List.lists);
       });
     });
   };
