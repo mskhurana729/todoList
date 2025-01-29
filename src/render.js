@@ -162,5 +162,6 @@ export class Render {
       counter++;
       taskRenderingArea.appendChild(taskToBeDisplayed);
     });
+    events.removeTaskButtonEvent();
   }
 }

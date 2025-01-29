@@ -45,6 +45,18 @@ export const events = (() => {
     });
   };
 
+  const removeTaskButtonEvent = function () {
+    let taskRemoveButtons = document.querySelectorAll(".taskRemoveButton");
+    taskRemoveButtons.forEach((taskRemoveButton) => {
+      taskRemoveButton.addEventListener("click", (e) => {
+        let taskIndex = taskRemoveButton.dataset.taskindex;
+        console.log(taskIndex);
+        List.removeTask(taskIndex);
+        Render.displaySelectedListTasks();
+        LocalStorage.saveListToLocalStorage(List.lists);
+      });
+    });
+  };
   const addTaskButtonEvent = (function () {
     addTaskButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -136,5 +148,5 @@ export const events = (() => {
     });
   };
 
-  return { removeListButtonEvent, selectListEvent };
+  return { removeListButtonEvent, selectListEvent, removeTaskButtonEvent };
 })();
